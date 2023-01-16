@@ -1,6 +1,9 @@
 package com.allstate.quickclaimsserver.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -10,18 +13,16 @@ public class QuickClaim {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String customerName;
     private String insuranceType;
-    private Date date;
     private Double amount;
     private String reason;
     private String description;
 
-    public QuickClaim(Integer id, String customerName, String insuranceType, Date date, Double amount, String reason, String description) {
-        this.id = id;
+    public QuickClaim(String customerName, String insuranceType, Double amount, String reason, String description) {
         this.customerName = customerName;
         this.insuranceType = insuranceType;
-        this.date = date;
         this.amount = amount;
         this.reason = reason;
         this.description = description;
@@ -54,13 +55,6 @@ public class QuickClaim {
         this.insuranceType = insuranceType;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public Double getAmount() {
         return amount;
@@ -89,10 +83,8 @@ public class QuickClaim {
     @Override
     public String toString() {
         return "QuickClaim{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
+                "customerName='" + customerName + '\'' +
                 ", insuranceType='" + insuranceType + '\'' +
-                ", date=" + date +
                 ", amount=" + amount +
                 ", reason='" + reason + '\'' +
                 ", description='" + description + '\'' +
@@ -104,11 +96,11 @@ public class QuickClaim {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuickClaim that = (QuickClaim) o;
-        return Objects.equals(id, that.id) && Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(date, that.date) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description);
+        return Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, customerName, insuranceType, date, amount, reason, description);
+        return Objects.hash(customerName, insuranceType, amount, reason, description);
     }
 }
