@@ -20,12 +20,16 @@ public class QuickClaim {
     private String reason;
     private String description;
 
-    public QuickClaim(String customerName, String insuranceType, Double amount, String reason, String description) {
+    private String status;
+
+
+    public QuickClaim(String customerName, String insuranceType, Double amount, String reason, String description, String status) {
         this.customerName = customerName;
         this.insuranceType = insuranceType;
         this.amount = amount;
         this.reason = reason;
         this.description = description;
+        this.status = status;
     }
 
     public QuickClaim() {
@@ -80,6 +84,15 @@ public class QuickClaim {
         this.description = description;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
     @Override
     public String toString() {
         return "QuickClaim{" +
@@ -88,6 +101,7 @@ public class QuickClaim {
                 ", amount=" + amount +
                 ", reason='" + reason + '\'' +
                 ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 
@@ -96,11 +110,11 @@ public class QuickClaim {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuickClaim that = (QuickClaim) o;
-        return Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description);
+        return Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description) && Objects.equals(status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerName, insuranceType, amount, reason, description);
+        return Objects.hash(customerName, insuranceType, amount, reason, description, status);
     }
 }

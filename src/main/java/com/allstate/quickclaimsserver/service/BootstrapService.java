@@ -17,16 +17,16 @@ public class BootstrapService {
     public void setUpInitialData(){
         int numberOfClaims = quickClaimRepository.findAll().size();
         if (numberOfClaims == 0) {
-            QuickClaim newQuickClaim1 = new QuickClaim("Carly Smith", "Pet", 150.00, "Operation on dog", "Required to remove lump");
-            QuickClaim newQuickClaim2 = new QuickClaim("Sam Reynolds", "Home", 300.00, "Flood damage", "Damage from floods last week");
-            QuickClaim newQuickClaim3 = new QuickClaim("Maria Anders", "Pet", 150.00, "needed an operation", "Broken bone");
-            QuickClaim newQuickClaim4 = new QuickClaim("Jane Brown", "Car", 250.00, "crack in windowscreen", "a stone hit the windowscreen and caused a crack");
-            QuickClaim newQuickClaim5 = new QuickClaim("Alan Grey", "Home", 375.00, "boiler repairs", "no hot running water");
-            QuickClaim newQuickClaim6 = new QuickClaim("Maddie Wray", "Pet", 75.00, "cut on paw", "vet visit for cut on paw");
-            QuickClaim newQuickClaim7 = new QuickClaim("Tommy Murray", "Car", 255.00, "other car drove into back of car", "sitting in traffic and car behind went into back of car");
-            QuickClaim newQuickClaim8 = new QuickClaim("James McHugh", "Car", 250.00, "skid on ice", "black ice due to snow during night");
-            QuickClaim newQuickClaim9 = new QuickClaim("Mike Peters", "Home", 175.00, "broken window", "stone thrown through window");
-            QuickClaim newQuickClaim10 = new QuickClaim("Cain Hobbs", "Pet", 125.00, "operation", "dog needed neutered");
+            QuickClaim newQuickClaim1 = new QuickClaim("Carly Smith", "Pet", 150.00, "Operation on dog", "Required to remove lump", "Active");
+            QuickClaim newQuickClaim2 = new QuickClaim("Sam Reynolds", "Home", 300.00, "Flood damage", "Damage from floods last week", "Active");
+            QuickClaim newQuickClaim3 = new QuickClaim("Maria Anders", "Pet", 150.00, "needed an operation", "Broken bone", "Closed");
+            QuickClaim newQuickClaim4 = new QuickClaim("Jane Brown", "Car", 250.00, "crack in window screen", "a stone hit the window screen and caused a crack", "Rejected");
+            QuickClaim newQuickClaim5 = new QuickClaim("Alan Grey", "Home", 375.00, "boiler repairs", "no hot running water", "Closed");
+            QuickClaim newQuickClaim6 = new QuickClaim("Maddie Wray", "Pet", 75.00, "cut on paw", "vet visit for cut on paw", "Active");
+            QuickClaim newQuickClaim7 = new QuickClaim("Tommy Murray", "Car", 255.00, "other car drove into back of car", "sitting in traffic and car behind went into back of car", "Rejected");
+            QuickClaim newQuickClaim8 = new QuickClaim("James McHugh", "Car", 250.00, "skid on ice", "black ice due to snow during night", "Active");
+            QuickClaim newQuickClaim9 = new QuickClaim("Mike Peters", "Home", 175.00, "broken window", "stone thrown through window", "Active");
+            QuickClaim newQuickClaim10 = new QuickClaim("Cain Hobbs", "Pet", 125.00, "operation", "dog needed neutered", "Closed");
 
             QuickClaim savedQuickClaim1 = quickClaimRepository.save(newQuickClaim1);
             QuickClaim savedQuickClaim2 = quickClaimRepository.save(newQuickClaim2);

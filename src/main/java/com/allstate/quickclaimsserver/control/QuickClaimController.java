@@ -21,9 +21,9 @@ public class QuickClaimController {
 
     @GetMapping()
     public List<QuickClaim> getAllClaims(){
-//        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off");
-        QuickClaim claim2 = new QuickClaim("Sam Reynolds", "Home",  300.00, "Flood damage", "Damage from floods last week");
-        QuickClaim claim3 = new QuickClaim("Carly Smith", "Pet",  150.00, "Operation on dog", "Required to remove lump");
+//        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off", "Closed");
+        QuickClaim claim2 = new QuickClaim("Sam Reynolds", "Home",  300.00, "Flood damage", "Damage from floods last week", "Active");
+        QuickClaim claim3 = new QuickClaim("Carly Smith", "Pet",  150.00, "Operation on dog", "Required to remove lump", "Rejected");
         List<QuickClaim> claims = new ArrayList<>();
 //        claims.add(claim1);
         claims.add(claim2);
@@ -34,7 +34,7 @@ public class QuickClaimController {
 
     @GetMapping("/init")
     public String setUpData(){
-        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off");
+        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off", "Closed");
         quickClaimService.saveQuickClaim(claim1);
         return "ok";
     }
