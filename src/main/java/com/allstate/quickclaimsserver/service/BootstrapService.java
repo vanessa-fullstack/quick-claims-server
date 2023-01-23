@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
+import java.time.Month;
+
 
 @Service
 public class BootstrapService {
@@ -17,16 +20,16 @@ public class BootstrapService {
     public void setUpInitialData(){
         int numberOfClaims = quickClaimRepository.findAll().size();
         if (numberOfClaims == 0) {
-            QuickClaim newQuickClaim1 = new QuickClaim("Carly Smith", "Pet", 150.00, "Operation on dog", "Required to remove lump", "Active");
-            QuickClaim newQuickClaim2 = new QuickClaim("Sam Reynolds", "Home", 300.00, "Flood damage", "Damage from floods last week", "Active");
-            QuickClaim newQuickClaim3 = new QuickClaim("Maria Anders", "Pet", 150.00, "needed an operation", "Broken bone", "Closed");
-            QuickClaim newQuickClaim4 = new QuickClaim("Jane Brown", "Car", 250.00, "crack in window screen", "a stone hit the window screen and caused a crack", "Rejected");
-            QuickClaim newQuickClaim5 = new QuickClaim("Alan Grey", "Home", 375.00, "boiler repairs", "no hot running water", "Closed");
-            QuickClaim newQuickClaim6 = new QuickClaim("Maddie Wray", "Pet", 75.00, "cut on paw", "vet visit for cut on paw", "Active");
-            QuickClaim newQuickClaim7 = new QuickClaim("Tommy Murray", "Car", 255.00, "other car drove into back of car", "sitting in traffic and car behind went into back of car", "Rejected");
-            QuickClaim newQuickClaim8 = new QuickClaim("James McHugh", "Car", 250.00, "skid on ice", "black ice due to snow during night", "Active");
-            QuickClaim newQuickClaim9 = new QuickClaim("Mike Peters", "Home", 175.00, "broken window", "stone thrown through window", "Active");
-            QuickClaim newQuickClaim10 = new QuickClaim("Cain Hobbs", "Pet", 125.00, "operation", "dog needed neutered", "Closed");
+            QuickClaim newQuickClaim1 = new QuickClaim("Carly Smith", "Pet", 150.00, "Operation on dog", "Required to remove lump", "Active", LocalDate.of(2023, Month.JANUARY, 1));
+            QuickClaim newQuickClaim2 = new QuickClaim("Sam Reynolds", "Home", 300.00, "Flood damage", "Damage from floods last week", "Active", LocalDate.of(2022, Month.DECEMBER, 28));
+            QuickClaim newQuickClaim3 = new QuickClaim("Maria Anders", "Pet", 150.00, "needed an operation", "Broken bone", "Closed", LocalDate.of(2022, Month.SEPTEMBER, 8));
+            QuickClaim newQuickClaim4 = new QuickClaim("Jane Brown", "Car", 250.00, "crack in window screen", "a stone hit the window screen and caused a crack", "Rejected", LocalDate.of(2023, Month.JANUARY, 14));
+            QuickClaim newQuickClaim5 = new QuickClaim("Alan Grey", "Home", 375.00, "boiler repairs", "no hot running water", "Closed", LocalDate.of(2022, Month.NOVEMBER, 13));
+            QuickClaim newQuickClaim6 = new QuickClaim("Maddie Wray", "Pet", 75.00, "cut on paw", "vet visit for cut on paw", "Active", LocalDate.of(2023, Month.JANUARY, 20));
+            QuickClaim newQuickClaim7 = new QuickClaim("Tommy Murray", "Car", 255.00, "other car drove into back of car", "sitting in traffic and car behind went into back of car", "Rejected", LocalDate.of(2022, Month.OCTOBER, 11));
+            QuickClaim newQuickClaim8 = new QuickClaim("James McHugh", "Car", 250.00, "skid on ice", "black ice due to snow during night", "Active", LocalDate.of(2022, Month.DECEMBER, 30));
+            QuickClaim newQuickClaim9 = new QuickClaim("Mike Peters", "Home", 175.00, "broken window", "stone thrown through window", "Active", LocalDate.of(2023, Month.JANUARY, 23));
+            QuickClaim newQuickClaim10 = new QuickClaim("Cain Hobbs", "Pet", 125.00, "operation", "dog needed neutered", "Closed", LocalDate.of(2022, Month.AUGUST, 5));
 
             QuickClaim savedQuickClaim1 = quickClaimRepository.save(newQuickClaim1);
             QuickClaim savedQuickClaim2 = quickClaimRepository.save(newQuickClaim2);
