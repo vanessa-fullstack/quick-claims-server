@@ -20,13 +20,12 @@ public class QuickClaim {
     private Double amount;
     private String reason;
     private String description;
-
     private String status;
-
     private LocalDate date;
+    private String policyNumber;
 
 
-    public QuickClaim(String customerName, String insuranceType, Double amount, String reason, String description, String status, LocalDate date) {
+    public QuickClaim(String customerName, String insuranceType, Double amount, String reason, String description, String status, LocalDate date, String policyNumber) {
         this.customerName = customerName;
         this.insuranceType = insuranceType;
         this.amount = amount;
@@ -34,6 +33,7 @@ public class QuickClaim {
         this.description = description;
         this.status = status;
         this.date = date;
+        this.policyNumber = policyNumber;
     }
 
     public QuickClaim() {
@@ -104,6 +104,13 @@ public class QuickClaim {
         this.date = date;
     }
 
+    public String getPolicyNumber() {
+        return policyNumber;
+    }
+
+    public void setPolicyNumber(String policyNumber) {
+        this.policyNumber = policyNumber;
+    }
 
 
     @Override
@@ -116,6 +123,7 @@ public class QuickClaim {
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", date='" + date + '\'' +
+                ", policyNumber='" + policyNumber + '\'' +
                 '}';
     }
 
@@ -124,11 +132,11 @@ public class QuickClaim {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuickClaim that = (QuickClaim) o;
-        return Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description) && Objects.equals(status, that.status) && Objects.equals(date, that.date);
+        return Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description) && Objects.equals(status, that.status) && Objects.equals(date, that.date) && Objects.equals(policyNumber, that.policyNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerName, insuranceType, amount, reason, description, status, date);
+        return Objects.hash(customerName, insuranceType, amount, reason, description, status, date, policyNumber);
     }
 }
