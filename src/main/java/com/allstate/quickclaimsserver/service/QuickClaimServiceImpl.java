@@ -6,8 +6,8 @@ import com.allstate.quickclaimsserver.exceptions.QuickClaimNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class QuickClaimServiceImpl implements  QuickClaimService{
@@ -16,8 +16,8 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
     private QuickClaimRepository quickClaimRepository;
 
     @Override
-    public void saveQuickClaim(QuickClaim quickclaim) {
-        quickClaimRepository.save(quickclaim);
+    public QuickClaim saveQuickClaim(QuickClaim quickclaim) {
+        return quickClaimRepository.save(quickclaim);
 
     }
 
@@ -55,5 +55,29 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
     @Override
     public List<QuickClaim> getByPolicyNumber(String policyNumber) {
         return quickClaimRepository.findAllByPolicyNumber(policyNumber);
+    }
+
+    @Override
+    public List<String> getAllStatuses() {
+
+        return quickClaimRepository.findAll().stream()
+                .map( quickClaim -> quickClaim.getStatus() )
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public QuickClaim updateQuickClaim(Integer id, Map<String, Object> fields) {
+
+        QuickClaim quickClaim = quickClaimRepository.findById(id).get();
+
+        if (fields.containsKey("status")){
+            quickClaim.setStatus(fields.get("status").toString());
+        }
+        if (fields.containsKey("amount")){
+            quickClaim.setAmount(Double.parseDouble(fields.get("amount").toString()));
+        }
+        return quickClaimRepository.save(quickClaim);
+
     }
 }

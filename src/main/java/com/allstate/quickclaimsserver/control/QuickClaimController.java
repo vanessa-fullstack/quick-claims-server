@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/quickclaim")
@@ -62,10 +64,22 @@ public class QuickClaimController {
         return quickClaimService.getById(id);
     }
 
+    @PostMapping
+    public QuickClaim saveNewQuickClaim(@RequestBody QuickClaim quickClaim){
+        System.out.println(quickClaim);
+        return quickClaimService.saveQuickClaim(quickClaim);
+    }
+
     @GetMapping("/init")
     public String setUpData(){
-        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off", "Closed", LocalDate.of(2022, Month.DECEMBER, 5), "127574123");
+        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off", "Closed", LocalDate.of(2022, Month.DECEMBER, 5), "127574123", null, "Ford", "Fiesta", "2018", null, null);
         quickClaimService.saveQuickClaim(claim1);
         return "ok";
     }
+
+    @PutMapping("/{id}")
+    public QuickClaim updateQuickClaim(@PathVariable Integer id, @RequestBody HashMap<String, Object> fields){
+        return quickClaimService.updateQuickClaim(id, fields);
+    }
+
 }
