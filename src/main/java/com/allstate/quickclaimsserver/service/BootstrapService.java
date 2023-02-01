@@ -30,6 +30,16 @@ public class BootstrapService {
             QuickClaim newQuickClaim8 = new QuickClaim("James McHugh", "Car", 250.00, "skid on ice", "black ice due to snow during night", "Active", LocalDate.of(2022, Month.DECEMBER, 30), "122374451", null, "BMW", "1 Series", "2019", null, null);
             QuickClaim newQuickClaim9 = new QuickClaim("Mike Peters", "Home", 175.00, "broken window", "stone thrown through window", "Active", LocalDate.of(2023, Month.JANUARY, 23), "125466328", "123 Sycamore Drive", null, null, null, null, null);
             QuickClaim newQuickClaim10 = new QuickClaim("Cain Hobbs", "Pet", 125.00, "operation", "dog needed neutered", "Closed", LocalDate.of(2022, Month.AUGUST, 5), "125622489", null, null, null, null, "Dog", "German Shepard");
+            QuickClaim newQuickClaim11 = new QuickClaim("Cain Hobbs", "Car", 200.00, "service", "car check up", "Active", LocalDate.of(2022, Month.SEPTEMBER, 6), "126641208", null, "Ford", "Kuga", "2018", null, null);
+            QuickClaim newQuickClaim12 = new QuickClaim("Harry Robson", "Car", 150.00, "break down", "pick up truck needed", "Rejected", LocalDate.of(2022, Month.APRIL, 24), "127425596", null, "Renault", "Clio", "2012", null, null);
+            QuickClaim newQuickClaim13 = new QuickClaim("Mike Hanna", "Home", 155.00, "break in", "broken lock on door", "Active", LocalDate.of(2022, Month.OCTOBER, 30), "122351008", "81 Pine Avenue", null, null, null, null, null);
+            QuickClaim newQuickClaim14 = new QuickClaim("Hannah Nelson", "Home", 225.00, "burst pipes", "leak from pipes due to frost", "Rejected", LocalDate.of(2022, Month.JANUARY, 6), "128761044", "12 Maple Drive", null, null, null, null, null);
+            QuickClaim newQuickClaim15 = new QuickClaim("Hannah Grey", "Pet", 95.00, "operation", "dog needed neutered", "Active", LocalDate.of(2023, Month.JANUARY, 30), "125354110", null, null, null, null, "Dog", "Labrador");
+            QuickClaim newQuickClaim16 = new QuickClaim("Carol Fell", "Pet", 150.00, "medicine", "treatment for sickness", "Rejected", LocalDate.of(2022, Month.OCTOBER, 24), "127412649", null, null, null, null, "Cat", "Siamese");
+            QuickClaim newQuickClaim17 = new QuickClaim("James Matthews", "Car", 350.00, "car crash", "car behind drove into back", "Active", LocalDate.of(2022, Month.NOVEMBER, 15), "123365004", null, "Volkswagon", "Golf", "2015", null, null);
+            QuickClaim newQuickClaim18 = new QuickClaim("Elizabeth Robinson", "Car", 160.00, "scrap on side of car", "paintwork repair", "Rejected", LocalDate.of(2022, Month.MAY, 5), "123410659", null, "Volkswagon", "Golf", "2019", null, null);
+            QuickClaim newQuickClaim19 = new QuickClaim("Emily Rooney", "Home", 205.00, "alarm repairs", "needed a new alarm", "Closed", LocalDate.of(2023, Month.JANUARY, 16), "127451003", "144 Oak Crescent", null, null, null, null, null);
+            QuickClaim newQuickClaim20 = new QuickClaim("Emily Rooney", "Car", 200.00, "wing mirror off", "other car knocked off wing mirror", "Active", LocalDate.of(2023, Month.JANUARY, 16), "127451224", null, "Vauxhall", "Astra", "2020", null, null);
 
             QuickClaim savedQuickClaim1 = quickClaimRepository.save(newQuickClaim1);
             QuickClaim savedQuickClaim2 = quickClaimRepository.save(newQuickClaim2);
@@ -41,6 +51,16 @@ public class BootstrapService {
             QuickClaim savedQuickClaim8 = quickClaimRepository.save(newQuickClaim8);
             QuickClaim savedQuickClaim9 = quickClaimRepository.save(newQuickClaim9);
             QuickClaim savedQuickClaim10 = quickClaimRepository.save(newQuickClaim10);
+            QuickClaim savedQuickClaim11 = quickClaimRepository.save(newQuickClaim11);
+            QuickClaim savedQuickClaim12 = quickClaimRepository.save(newQuickClaim12);
+            QuickClaim savedQuickClaim13 = quickClaimRepository.save(newQuickClaim13);
+            QuickClaim savedQuickClaim14 = quickClaimRepository.save(newQuickClaim14);
+            QuickClaim savedQuickClaim15 = quickClaimRepository.save(newQuickClaim15);
+            QuickClaim savedQuickClaim16 = quickClaimRepository.save(newQuickClaim16);
+            QuickClaim savedQuickClaim17 = quickClaimRepository.save(newQuickClaim17);
+            QuickClaim savedQuickClaim18 = quickClaimRepository.save(newQuickClaim18);
+            QuickClaim savedQuickClaim19 = quickClaimRepository.save(newQuickClaim19);
+            QuickClaim savedQuickClaim20 = quickClaimRepository.save(newQuickClaim20);
 
             System.out.println("Claim saved with id " + savedQuickClaim1.getId());
             System.out.println("Claim saved with id " + savedQuickClaim2.getId());
@@ -52,6 +72,18 @@ public class BootstrapService {
             System.out.println("Claim saved with id " + savedQuickClaim8.getId());
             System.out.println("Claim saved with id " + savedQuickClaim9.getId());
             System.out.println("Claim saved with id " + savedQuickClaim10.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim11.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim12.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim13.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim14.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim15.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim16.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim17.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim18.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim19.getId());
+            System.out.println("Claim saved with id " + savedQuickClaim20.getId());
+
+
         }
 
     }
