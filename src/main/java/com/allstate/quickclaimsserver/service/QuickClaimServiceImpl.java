@@ -69,13 +69,22 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
     @Override
     public QuickClaim updateQuickClaim(Integer id, Map<String, Object> fields) {
 
-        QuickClaim quickClaim = quickClaimRepository.findById(id).get();
+        QuickClaim quickClaim = quickClaimRepository.findById(id).get();//should really check it is there and throw an exception
 
+        if (fields.containsKey("customerName")){
+            quickClaim.setCustomerName(fields.get("customerName").toString());
+        }
         if (fields.containsKey("status")){
             quickClaim.setStatus(fields.get("status").toString());
         }
+        if (fields.containsKey("insuranceType")){
+            quickClaim.setInsuranceType(fields.get("insuranceType").toString());
+        }
         if (fields.containsKey("amount")){
             quickClaim.setAmount(Double.parseDouble(fields.get("amount").toString()));
+        }
+        if (fields.containsKey("reason")){
+            quickClaim.setReason(fields.get("reason").toString());
         }
         return quickClaimRepository.save(quickClaim);
 

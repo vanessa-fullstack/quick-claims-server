@@ -31,7 +31,8 @@ public class QuickClaim {
     private String breed;
 
 
-    public QuickClaim(String customerName, String insuranceType, Double amount, String reason, String description, String status, LocalDate date, String policyNumber, String address, String makeOfVehicle, String modelOfVehicle, String yearOfManufacture, String animal, String breed) {
+    public QuickClaim(Integer id, String customerName, String insuranceType, Double amount, String reason, String description, String status, LocalDate date, String policyNumber, String address, String makeOfVehicle, String modelOfVehicle, String yearOfManufacture, String animal, String breed) {
+        this.id = id;
         this.customerName = customerName;
         this.insuranceType = insuranceType;
         this.amount = amount;
@@ -171,6 +172,7 @@ public class QuickClaim {
     @Override
     public String toString() {
         return "QuickClaim{" +
+                "id=" + id +
                 "customerName='" + customerName + '\'' +
                 ", insuranceType='" + insuranceType + '\'' +
                 ", amount=" + amount +
@@ -193,12 +195,12 @@ public class QuickClaim {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuickClaim that = (QuickClaim) o;
-        return Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description) && Objects.equals(status, that.status) && Objects.equals(date, that.date) && Objects.equals(policyNumber, that.policyNumber) && Objects.equals(address, that.address )
+        return Objects.equals(id, that.id) && Objects.equals(customerName, that.customerName) && Objects.equals(insuranceType, that.insuranceType) && Objects.equals(amount, that.amount) && Objects.equals(reason, that.reason) && Objects.equals(description, that.description) && Objects.equals(status, that.status) && Objects.equals(date, that.date) && Objects.equals(policyNumber, that.policyNumber) && Objects.equals(address, that.address )
                 && Objects.equals(makeOfVehicle, that.makeOfVehicle) && Objects.equals(modelOfVehicle, that.modelOfVehicle) && Objects.equals(yearOfManufacture, that.yearOfManufacture) && Objects.equals(animal, that.animal) && Objects.equals(breed, that.breed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerName, insuranceType, amount, reason, description, status, date, policyNumber, address, makeOfVehicle, modelOfVehicle, yearOfManufacture, animal, breed);
+        return Objects.hash(id, customerName, insuranceType, amount, reason, description, status, date, policyNumber, address, makeOfVehicle, modelOfVehicle, yearOfManufacture, animal, breed);
     }
 }

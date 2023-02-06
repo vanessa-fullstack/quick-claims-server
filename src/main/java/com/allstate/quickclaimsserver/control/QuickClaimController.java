@@ -70,16 +70,19 @@ public class QuickClaimController {
         return quickClaimService.saveQuickClaim(quickClaim);
     }
 
-    @GetMapping("/init")
-    public String setUpData(){
-        QuickClaim claim1 = new QuickClaim("Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off", "Closed", LocalDate.of(2022, Month.DECEMBER, 5), "127574123", null, "Ford", "Fiesta", "2018", null, null);
-        quickClaimService.saveQuickClaim(claim1);
-        return "ok";
-    }
+//    @GetMapping("/init")
+//    public String setUpData(){
+//        QuickClaim claim1 = new QuickClaim(1, "Vanessa Carney", "Car",  250.00, "Broken wing mirror", "Another car knocked the wing mirror off", "Closed", LocalDate.of(2022, Month.DECEMBER, 5), "127574123", null, "Ford", "Fiesta", "2018", null, null);
+//        quickClaimService.saveQuickClaim(claim1);
+//        return "ok";
+//    }
 
     @PutMapping("/{id}")
     public QuickClaim updateQuickClaim(@PathVariable Integer id, @RequestBody HashMap<String, Object> fields){
+        System.out.println("updating claim with "+ id + fields);
         return quickClaimService.updateQuickClaim(id, fields);
     }
+
+
 
 }
