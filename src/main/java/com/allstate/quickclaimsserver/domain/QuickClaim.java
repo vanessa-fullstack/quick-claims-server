@@ -135,7 +135,7 @@ public class QuickClaim {
         return makeOfVehicle;
     }
 
-    public void setMakeOfVehicle(String makeOfVehicle) { this.address = makeOfVehicle; }
+    public void setMakeOfVehicle(String makeOfVehicle) { this.makeOfVehicle = makeOfVehicle; }
 
     public String getModelOfVehicle() {
         return modelOfVehicle;

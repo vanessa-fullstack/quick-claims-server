@@ -14,10 +14,4 @@ public interface QuickClaimRepository extends JpaRepository<QuickClaim, Integer>
     public List<QuickClaim> findAllByCustomerName(String customerName);
     public List<QuickClaim> findAllByPolicyNumber(String policyNumber);
 
-
-
-
-
-
-
 }
