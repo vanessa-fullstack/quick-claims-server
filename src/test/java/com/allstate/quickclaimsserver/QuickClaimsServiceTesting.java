@@ -2,6 +2,7 @@ package com.allstate.quickclaimsserver;
 
 import com.allstate.quickclaimsserver.data.QuickClaimRepository;
 import com.allstate.quickclaimsserver.domain.QuickClaim;
+import com.allstate.quickclaimsserver.service.BootstrapService;
 import com.allstate.quickclaimsserver.service.QuickClaimService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,19 +35,17 @@ public class QuickClaimsServiceTesting {
 
     @Test
     public void testGetAllStatues() {
-//        List<QuickClaim> quickClaims = new ArrayList<>();
-//        quickClaims.add(new QuickClaim("Tom Brown", "Home", 150.00, "boiler repairs", "No hot running water", "Closed", LocalDate.of(2023, Month.JANUARY, 1), "127423658","23 Main Street", null, null, null, null, null));
-//        quickClaims.add(new QuickClaim("Haley Wiggens", "Pet", 150.00, "Operation on dog", "Required to remove lump", "Active",  LocalDate.of(2023, Month.JANUARY, 1), "124758960",null, null, null, null, "Dog", "Labrador"));
-//        quickClaims.add(new QuickClaim("Stacey Brown", "Home", 150.00, "boiler repairs", "No hot running water", "Closed",  LocalDate.of(2023, Month.JANUARY, 1), "127423658","23 Main Street", null, null, null, null, null));
-//        quickClaims.add(new QuickClaim("John Smith", "Car", 150.00, "Broke down", "Tow truck needed", "Rejected",  LocalDate.of(2023, Month.JANUARY, 1), "123415876",null, "Renault", "Clio", "2015", null, null));
-//        quickClaims.add(new QuickClaim("Jane Smith", "Car", 150.00, "Broke down", "Tow truck needed", "Closed",  LocalDate.of(2023, Month.JANUARY, 1), "123415876",null, "Renault", "Clio", "2015", null, null));
-//        Mockito.when(quickClaimRepository.findAll()).thenReturn(quickClaims);
-//
-//        List<String> statues = quickClaimService.getAllStatuses();
-//        assertEquals(4, statues.size());
-        fail();
+        List<QuickClaim> quickClaims = new ArrayList<>();
+        quickClaims.add(new QuickClaim(1,"Tom Brown", "Home", 150.00, "boiler repairs", "No hot running water", "Awaiting payment", LocalDate.of(2023, Month.JANUARY, 1), "127423658","23 Main Street", null, null, null, null, null));
+        quickClaims.add(new QuickClaim(2,"Haley Wiggens", "Pet", 150.00, "Operation on dog", "Required to remove lump", "Active",  LocalDate.of(2023, Month.JANUARY, 1), "124758960",null, null, null, null, "Dog", "Labrador"));
+        quickClaims.add(new QuickClaim(3,"Stacey Brown", "Home", 150.00, "boiler repairs", "No hot running water", "Closed",  LocalDate.of(2023, Month.JANUARY, 1), "127423658","23 Main Street", null, null, null, null, null));
+        quickClaims.add(new QuickClaim(4,"John Smith", "Car", 150.00, "Broke down", "Tow truck needed", "Rejected",  LocalDate.of(2023, Month.JANUARY, 1), "123415876",null, "Renault", "Clio", "2015", null, null));
+        quickClaims.add(new QuickClaim(5,"Jane Smith", "Car", 150.00, "Broke down", "Tow truck needed", "Passed on",  LocalDate.of(2023, Month.JANUARY, 1), "123415876",null, "Renault", "Clio", "2015", null, null));
+        Mockito.when(quickClaimRepository.findAll()).thenReturn(quickClaims);
+
+        List<String> statues = quickClaimService.getAllStatuses();
+        assertEquals(5, statues.size());
+//        fail();
     }
 
 }
-
-//

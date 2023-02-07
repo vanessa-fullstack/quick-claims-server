@@ -1,7 +1,10 @@
 package com.allstate.quickclaimsserver.service;
 
 import com.allstate.quickclaimsserver.data.QuickClaimRepository;
+import com.allstate.quickclaimsserver.data.UserRepository;
 import com.allstate.quickclaimsserver.domain.QuickClaim;
+import com.allstate.quickclaimsserver.domain.User;
+import com.allstate.quickclaimsserver.domain.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +18,12 @@ public class BootstrapService {
 
     @Autowired
     private QuickClaimRepository quickClaimRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
 
     @PostConstruct
     public void setUpInitialData(){
@@ -82,10 +91,18 @@ public class BootstrapService {
             System.out.println("Claim saved with id " + savedQuickClaim18.getId());
             System.out.println("Claim saved with id " + savedQuickClaim19.getId());
             System.out.println("Claim saved with id " + savedQuickClaim20.getId());
-
-
         }
 
     }
-}
 
+    @PostConstruct
+    public void createInitialUsers(){
+        if(userRepository.count() == 0) {
+            User user1 = new User("vanessa", "Vanessa", "pass1", UserRole.AGENT);
+            User user2 = new User("tommy", "Tommy", "pass1", UserRole.USER);
+            userService.save(user1);
+            userService.save(user2);
+        }
+    }
+
+}
