@@ -6,6 +6,7 @@ import com.allstate.quickclaimsserver.exceptions.QuickClaimNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -85,6 +86,9 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
         }
         if (fields.containsKey("reason")){
             quickClaim.setReason(fields.get("reason").toString());
+        }
+        if (fields.containsKey("description")){
+            quickClaim.setDescription(fields.get("description").toString());
         }
         return quickClaimRepository.save(quickClaim);
 
