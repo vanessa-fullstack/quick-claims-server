@@ -2,6 +2,7 @@ package com.allstate.quickclaimsserver.service;
 
 import com.allstate.quickclaimsserver.data.QuickClaimRepository;
 import com.allstate.quickclaimsserver.domain.QuickClaim;
+import com.allstate.quickclaimsserver.exceptions.QuickClaimBadRequestException;
 import com.allstate.quickclaimsserver.exceptions.QuickClaimNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,15 +69,21 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
     }
 
     @Override
-    public QuickClaim updateQuickClaim(Integer id, Map<String, Object> fields) {
+    public QuickClaim updateQuickClaim(Integer id, Map<String, Object> fields) throws QuickClaimBadRequestException {
 
-        QuickClaim quickClaim = quickClaimRepository.findById(id).get();//should really check it is there and throw an exception
+        QuickClaim quickClaim = quickClaimRepository.findById(id).get();
 
         if (fields.containsKey("customerName")){
             quickClaim.setCustomerName(fields.get("customerName").toString());
         }
         if (fields.containsKey("status")){
-            quickClaim.setStatus(fields.get("status").toString());
+            if (!quickClaim.getStatus().contains("Rejected") && !quickClaim.getStatus().contains("Closed")){
+                System.out.println("You have updated the value if not already rejected");
+                quickClaim.setStatus(fields.get("status").toString());
+            }
+            else {
+                throw new QuickClaimBadRequestException("Cannot update Quick Claim Status " + id);
+            }
         }
         if (fields.containsKey("insuranceType")){
             quickClaim.setInsuranceType(fields.get("insuranceType").toString());

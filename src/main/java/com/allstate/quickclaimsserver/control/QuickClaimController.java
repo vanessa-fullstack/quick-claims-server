@@ -1,6 +1,7 @@
 package com.allstate.quickclaimsserver.control;
 
 import com.allstate.quickclaimsserver.domain.QuickClaim;
+import com.allstate.quickclaimsserver.exceptions.QuickClaimBadRequestException;
 import com.allstate.quickclaimsserver.exceptions.QuickClaimNotFoundException;
 import com.allstate.quickclaimsserver.service.QuickClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,7 +79,7 @@ public class QuickClaimController {
 //    }
 
     @PutMapping("/{id}")
-    public QuickClaim updateQuickClaim(@PathVariable Integer id, @RequestBody HashMap<String, Object> fields){
+    public QuickClaim updateQuickClaim(@PathVariable Integer id, @RequestBody HashMap<String, Object> fields) throws QuickClaimBadRequestException, QuickClaimNotFoundException {
         System.out.println("updating claim with "+ id + fields);
         return quickClaimService.updateQuickClaim(id, fields);
     }

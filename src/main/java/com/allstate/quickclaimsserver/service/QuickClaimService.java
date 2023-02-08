@@ -1,6 +1,7 @@
 package com.allstate.quickclaimsserver.service;
 
 import com.allstate.quickclaimsserver.domain.QuickClaim;
+import com.allstate.quickclaimsserver.exceptions.QuickClaimBadRequestException;
 import com.allstate.quickclaimsserver.exceptions.QuickClaimNotFoundException;
 
 import java.util.List;
@@ -20,6 +21,6 @@ public interface QuickClaimService {
 
     public List<String> getAllStatuses();
 
-    public QuickClaim updateQuickClaim(Integer id, Map<String, Object> fields);
+    public QuickClaim updateQuickClaim(Integer id, Map<String, Object> fields) throws QuickClaimBadRequestException;
 
 }
