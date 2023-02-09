@@ -71,26 +71,26 @@ public class BootstrapService {
             QuickClaim savedQuickClaim19 = quickClaimRepository.save(newQuickClaim19);
             QuickClaim savedQuickClaim20 = quickClaimRepository.save(newQuickClaim20);
 
-            System.out.println("Claim saved with id " + savedQuickClaim1.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim2.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim3.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim4.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim5.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim6.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim7.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim8.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim9.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim10.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim11.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim12.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim13.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim14.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim15.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim16.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim17.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim18.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim19.getId());
-            System.out.println("Claim saved with id " + savedQuickClaim20.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim1.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim2.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim3.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim4.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim5.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim6.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim7.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim8.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim9.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim10.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim11.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim12.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim13.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim14.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim15.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim16.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim17.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim18.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim19.getId());
+//            System.out.println("Claim saved with id " + savedQuickClaim20.getId());
         }
 
     }

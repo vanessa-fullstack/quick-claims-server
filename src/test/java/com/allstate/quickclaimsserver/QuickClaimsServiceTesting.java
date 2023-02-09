@@ -1,6 +1,7 @@
 package com.allstate.quickclaimsserver;
 
 import com.allstate.quickclaimsserver.data.QuickClaimRepository;
+import com.allstate.quickclaimsserver.data.UserRepository;
 import com.allstate.quickclaimsserver.domain.QuickClaim;
 import com.allstate.quickclaimsserver.service.BootstrapService;
 import com.allstate.quickclaimsserver.service.QuickClaimService;
@@ -19,6 +20,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,6 +34,9 @@ public class QuickClaimsServiceTesting {
 
     @MockBean
     private QuickClaimRepository quickClaimRepository;
+
+    @MockBean
+    private UserRepository userRepository;
 
     @Test
     public void testGetAllStatues() {

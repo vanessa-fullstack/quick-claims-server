@@ -78,7 +78,7 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
         }
         if (fields.containsKey("status")){
             if (!quickClaim.getStatus().contains("Rejected") && !quickClaim.getStatus().contains("Closed")){
-                System.out.println("You have updated the value if not already rejected");
+                System.out.println("You have updated the value if not already rejected or closed");
                 quickClaim.setStatus(fields.get("status").toString());
             }
             else {
@@ -97,6 +97,7 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
         if (fields.containsKey("description")){
             quickClaim.setDescription(fields.get("description").toString());
         }
+
         return quickClaimRepository.save(quickClaim);
 
     }

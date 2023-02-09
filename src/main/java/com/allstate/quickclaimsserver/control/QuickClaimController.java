@@ -83,7 +83,4 @@ public class QuickClaimController {
         System.out.println("updating claim with "+ id + fields);
         return quickClaimService.updateQuickClaim(id, fields);
     }
-
-
-
 }
