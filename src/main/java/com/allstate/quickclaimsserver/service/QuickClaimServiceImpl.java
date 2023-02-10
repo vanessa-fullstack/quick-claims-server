@@ -97,6 +97,24 @@ public class QuickClaimServiceImpl implements  QuickClaimService{
         if (fields.containsKey("description")){
             quickClaim.setDescription(fields.get("description").toString());
         }
+        if (fields.containsKey("address")){
+            quickClaim.setAddress(fields.get("address").toString());
+        }
+        if (fields.containsKey("makeOfVehicle")){
+            quickClaim.setMakeOfVehicle(fields.get("makeOfVehicle").toString());
+        }
+        if (fields.containsKey("modelOfVehicle")){
+            quickClaim.setModelOfVehicle(fields.get("modelOfVehicle").toString());
+        }
+        if (fields.containsKey("yearOfManufacture")){
+            quickClaim.setYearOfManufacture(fields.get("yearOfManufacture").toString());
+        }
+        if (fields.containsKey("animal")){
+            quickClaim.setAnimal(fields.get("animal").toString());
+        }
+        if (fields.containsKey("breed")){
+            quickClaim.setBreed(fields.get("breed").toString());
+        }
 
         return quickClaimRepository.save(quickClaim);
 
